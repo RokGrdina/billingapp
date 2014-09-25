@@ -1,0 +1,98 @@
+﻿@model BillingApp.Models.Bill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bill</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecieverCompany.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecieverCompany.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SenderCompany.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SenderCompany.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidUntill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValidUntill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OverallPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OverallPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<BillingApp.Models.Bill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecieverCompany.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderCompany.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DUR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidUntill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OverallPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecieverCompany.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderCompany.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DUR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidUntill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OverallPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
