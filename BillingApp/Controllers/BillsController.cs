@@ -29,7 +29,12 @@ namespace BillingApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bill bill = db.Bills.Find(id);
+            Bill bill =
+                db.Bills
+                    .Include(m => m.SenderCompany)
+                    .Include(m => m.RecieverCompany)
+                    .SingleOrDefault(m => m.BillNumber == id);
+                
             if (bill == null)
             {
                 return HttpNotFound();
